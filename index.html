@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청AI - Simple Project Hub</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div id="main-center">
+        <div id="cheong-ai-btn">청AI</div>
+    </div>
+
+    <div id="left-menu">
+	<div id="home-icon-area">
+            <span id="home-btn">🏠 HOME</span>
+    	</div>
+        <div class="menu-item active" data-project="project1">Project 1</div>
+        <div class="menu-item" data-project="project2">Project 2</div>
+        </div>
+
+    <div id="right-content">
+        <!-- Project 1 영역 -->
+        <div id="project1-content" class="project-content">
+            <h2>Project 1 Data</h2>
+            
+            <div id="search-area">
+                <select id="search-field">
+                    <option value="no">no</option>
+                    <option value="name" selected>name</option>
+                    <option value="role">role</option>
+                    <option value="department">department</option>
+                    <option value="e_mail">e_mail</option>
+                    <option value="phone">phone</option>
+                    <option value="exhibitor">exhibitor</option>
+                </select>
+                <input type="text" id="search-input" placeholder="검색어를 입력하세요...">
+                <button id="search-btn">검색</button>
+            </div>
+
+            <table id="data-table">
+                <thead>
+                    <tr>
+                        <th>no</th>
+                        <th>name</th>
+                        <th>role</th>
+                        <th>department</th>
+                        <th>e_mail</th>
+                        <th>phone</th>
+                        <th>exhibitor</th>
+                    </tr>
+                </thead>
+                <tbody id="data-body">
+                    </tbody>
+            </table>
+
+            <div id="pagination">
+                </div>
+        </div>
+
+        <!-- Project 2 영역 -->
+        <div id="project2-content" class="project-content" style="display: none;">
+            <!-- 테이블 목록 화면 -->
+            <div id="tables-list-view">
+                <h2>Database Tables</h2>
+                <p>Supabase에 있는 모든 테이블 목록입니다. 테이블을 클릭하면 데이터를 확인할 수 있습니다.</p>
+                
+                <div id="tables-list">
+                    <div id="tables-loading">테이블 목록을 불러오는 중...</div>
+                </div>
+            </div>
+
+            <!-- 테이블 데이터 화면 -->
+            <div id="table-data-view" style="display: none;">
+                <button id="back-to-tables-btn" class="back-btn">← 테이블 목록으로</button>
+                <h2 id="current-table-title">Table Data</h2>
+                
+                <div id="table-search-area">
+                    <input type="text" id="table-search-input" placeholder="모든 필드에서 검색...">
+                    <button id="table-search-btn">검색</button>
+                </div>
+
+                <table id="dynamic-table">
+                    <thead id="dynamic-table-head">
+                    </thead>
+                    <tbody id="dynamic-table-body">
+                    </tbody>
+                </table>
+
+                <div id="table-pagination">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
